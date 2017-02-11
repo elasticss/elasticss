@@ -44,6 +44,6 @@
     "watch": "npm-run-all -p serve watch:css watch:html",
     "lint": "stylint --config .styluslintrc src/*styl",
     "postinstall": "npm run build && npm run watch",
-    "publish": "gh-pages -d prod -b gh-page"
+    "publish": "gh-pages -d prod --repo https://github.com/elasticss/elasticss.github.io.git"
   }
 }
