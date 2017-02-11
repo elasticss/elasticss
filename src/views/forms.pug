@@ -1,0 +1,18 @@
+section
+    h1.text-center.uppercase.text-primary Forms
+    form
+        fieldset
+            label(for='name') Name
+            input#name(type='text', placeholder='John')
+            label(for='country') Country
+            select#country
+                option(value='France') France
+                option(value='Spain') Spain
+                option(value='?') Sorry, I don&apos;t remember...
+            label(for='comment') Comment
+            textarea#comment(placeholder='Add a comment')
+            .float-right
+                input#confirm(type='checkbox')
+                label.label-inline(for='confirm') Send a copy to yourself
+            input.button-primary(type='submit', value='Send')
+

@@ -1,0 +1,49 @@
+{
+  "name": "elasticss",
+  "version": "0.0.1",
+  "description": "Light css framework",
+  "main": "elastic.css",
+  "author": "Sébastien Pereda <sebastien.pereda@gmail.com> (http://www.bastoche.fr)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elasticss/elasticss"
+  },
+  "keywords": [
+    "css",
+    "framework"
+  ],
+  "dependencies": {
+    "normalize.css": "^5.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "gh-pages": "^0.12.0",
+    "npm-run-all": "^4.0.1",
+    "onchange": "^3.2.1",
+    "opn-cli": "^3.1.0",
+    "postcss-cli": "^2.6.0",
+    "pug": "^2.0.0-beta11",
+    "rimraf": "^2.5.4",
+    "stylint": "^1.5.9",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*.*",
+    "css:prod": "stylus src/styl/elastic.styl -o prod/elastic.css",
+    "css:dist": "stylus src/styl/elastic.styl -o dist/elastic.css && stylus -c src/styl/elastic.styl -o dist/elastic.min.css",
+    "autoprefixer": "postcss -u autoprefixer -r prod/*.css",
+    "prefix:dist": "postcss -u autoprefixer -r dist/*.css",
+    "html": "pug --pretty src/views/index.pug --out prod",
+    "build:css": "npm run css:prod && npm run autoprefixer",
+    "build": "npm run html && npm run build:css",
+    "dist": "npm run clean && mkdir dist && npm run css:dist && npm run prefix:dist",
+    "serve": "browser-sync start -s prod -f prod",
+    "watch:css": "onchange 'src/styl/*.styl' -- npm run build:css",
+    "watch:html": "onchange 'src/views/*.pug' -- npm run html",
+    "watch": "npm-run-all -p serve watch:css watch:html",
+    "lint": "stylint --config .styluslintrc src/*styl",
+    "postinstall": "npm run build && npm run watch",
+    "publish": "gh-pages -d prod -b gh-page"
+  }
+}

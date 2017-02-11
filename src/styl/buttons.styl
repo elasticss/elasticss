@@ -1,0 +1,116 @@
+// BUTTONS
+//
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+hover = darken(primary, 5)
+
+.btn
+    margin-left: .5rem
+    margin-right: .5rem
+
+.btn,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit']
+    background-color: primary
+    border: .1rem solid primary
+    border-radius: .4rem
+    color: white
+    cursor: pointer
+    display: inline-block
+    font-size: 1.1rem
+    font-weight: 700
+    height: 3.8rem
+    letter-spacing: .1rem
+    line-height: 3.8rem
+    padding: 0 1.5rem
+    text-align: center
+    text-decoration: none
+    text-transform: uppercase
+    white-space: nowrap
+
+    &:focus,
+    &:hover
+        background-color: hover
+        border-color: hover
+        color: white
+        outline: 0
+
+    &[disabled]
+        cursor: auto
+        opacity: .5
+
+        &:focus,
+        &:hover
+            background-color: primary
+            border-color: primary
+
+    &.btn-outline
+        background-color: transparent
+        color: primary
+
+        &:focus,
+        &:hover
+            background-color: transparent
+            border-color: hover
+            color: hover
+
+        &[disabled]
+
+            &:focus,
+            &:hover
+                border-color: inherit
+                color: primary
+
+    &.btn-clear
+        background-color: transparent
+        border-color: transparent
+        color: primary
+
+        &:focus,
+        &:hover
+            background-color: transparent
+            border-color: transparent
+            color: hover
+
+        &[disabled]
+
+            &:focus,
+            &:hover
+                color: primary
+
+.btn-round
+    border-radius: 20rem
+
+// Sets the classic “default, success, info, warning and danger“ classes
+.btn-default
+    btn-variant(default, white)
+
+.btn-success
+    btn-variant(success, white)
+
+.btn-info
+    btn-variant(info, white)
+
+.btn-warning
+    btn-variant(warning, white)
+
+.btn-danger
+    btn-variant(danger, white)
+
+// Outlined buttons
+.btn-outline-default
+    btn-outline(default)
+
+.btn-outline-success
+    btn-outline(success)
+
+.btn-outline-info
+    btn-outline(info)
+
+.btn-outline-warning
+    btn-outline(warning)
+
+.btn-outline-danger
+    btn-outline(danger)
