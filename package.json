@@ -29,6 +29,7 @@
     "stylus": "^0.54.5"
   },
   "scripts": {
+    "start": "npm run build && npm run watch",
     "clean": "rimraf dist/*.*",
     "css:prod": "stylus src/styl/elastic.styl -o prod/elastic.css",
     "css:dist": "stylus src/styl/elastic.styl -o dist/elastic.css && stylus -c src/styl/elastic.styl -o dist/elastic.min.css",
@@ -40,10 +41,10 @@
     "dist": "npm run clean && mkdir dist && npm run css:dist && npm run prefix:dist",
     "serve": "browser-sync start -s prod -f prod",
     "watch:css": "onchange 'src/styl/*.styl' -- npm run build:css",
-    "watch:html": "onchange 'src/views/*.pug' -- npm run html",
+    "watch:html": "onchange 'src/views/*.*' -- npm run html",
     "watch": "npm-run-all -p serve watch:css watch:html",
     "lint": "stylint --config .styluslintrc src/*styl",
-    "postinstall": "npm run build && npm run watch",
+    "postinstall": "npm start",
     "publish": "gh-pages -d prod -b master --repo https://github.com/elasticss/elasticss.github.io.git"
   }
 }
