@@ -40,10 +40,30 @@
         display: block
         height: 100%
         left: 0
-        opacity: .7
+        opacity: .65
         position: absolute
         top: 0
         width: 100%
+
+.scroll-icon
+    font-size: 35px
+    color,
+    &:visited
+        color: white
+    width: 50px
+    border-radius: 50%
+    height: 50px
+    border: 1px solid white
+    display: block
+    margin: 0 auto
+    z-index: 1029
+    transform: translateX(-50%)
+    opacity: .9
+    cursor: pointer
+    &:hover,
+    &:active
+        color: white
+        opacity: 1
 
 .section-sm
     padding: 5rem 0
@@ -78,6 +98,15 @@
 .uppercase
     text-transform: uppercase
 
+.xs
+    font-size: 1.4rem
+
+.small
+    font-size: 1.6rem
+
+.medium
+    font-size: 1.8rem
+
 .xl
     font-size: 2.6rem
 
@@ -88,16 +117,25 @@
     font-size: 4rem
 
 .jumbo
-    font-size: 5rem
+    font-size: 4.5rem
     letter-spacing: .1rem
 
 .hero
-    font-size: 5.5rem
+    font-size: 5rem
     letter-spacing: .1rem
 
 
 
 @media (min-width: 550px)
+    .xs
+        font-size: 1.6em
+
+    .small
+        font-size: 1.8em
+
+    .medium
+        font-size: 2.4rem
+
     .xl
         font-size: 3rem
 
@@ -127,6 +165,10 @@
 .space-50
     display: block
     height: 5rem
+
+.big-space
+    display: block
+    height: 20rem
 
 
 .full-width
@@ -221,3 +263,7 @@
 
 .padding-0
     padding: 0
+
+.white
+    color: white
+

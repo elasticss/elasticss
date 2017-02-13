@@ -4,6 +4,7 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
         meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        script(src="https://use.fontawesome.com/df8ec2625f.js")
         title ELASTICSS
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/darcula.min.css')
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
@@ -12,7 +13,21 @@ html(lang='en')
 
         block content
 
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js')
         script.
             hljs.initHighlightingOnLoad();
+            $('a[data-scroll="true"]').click(function (e) {
+                var scroll_target = $(this).data('id');
+                var scroll_trigger = $(this).data('scroll');
+
+                if (scroll_trigger == true && scroll_target !== undefined) {
+                    e.preventDefault();
+
+                    $('html, body').animate({
+                        scrollTop: $(scroll_target).offset().top - 50
+                    }, 1000);
+                }
+
+            });
 
