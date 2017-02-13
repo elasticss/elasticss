@@ -26,7 +26,7 @@
     "noImportant": true,
     "parenSpace": false,
     "placeholders": "always",
-    "prefixVarsWithDollar": "never",
+    "prefixVarsWithDollar": "false",
     "quotePref": false,
     "reporterOptions": {
         "columns": ["lineData", "severity", "description", "rule"],

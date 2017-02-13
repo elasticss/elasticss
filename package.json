@@ -32,7 +32,7 @@
     "start": "npm run build && npm run watch",
     "clean": "rimraf dist/*.*",
     "css:prod": "stylus src/styl/elastic.styl -o prod/elastic.css",
-    "css:dist": "stylus src/styl/elastic.styl -o dist/elastic.css && stylus -c src/styl/elastic.styl -o dist/elastic.min.css",
+    "css:dist": "npm run clean && mkdir dist && stylus src/styl/elastic.styl -o dist/elastic.css && stylus -c src/styl/elastic.styl -o dist/elastic.min.css",
     "autoprefixer": "postcss -u autoprefixer -r prod/*.css",
     "prefix:dist": "postcss -u autoprefixer -r dist/*.css",
     "html": "pug --pretty src/views/index.pug --out prod",
