@@ -5,3 +5,26 @@ hr
     border: 0
     border-top: .1rem solid light-grey
     margin: 3rem 0 0
+
+.separator
+    color: primary
+    margin: 0 auto 2rem
+    max-width: 24rem
+    position: relative
+    text-align: center
+    &:before,
+    &:after
+        border: .1rem solid primary
+        content: " "
+        display: block
+        margin-top: 1rem
+        width: 40%
+    &:before
+        float: left
+    &:after
+        float: right
+    &.white
+        color: white
+        &:before,
+        &:after
+            border: .1rem solid white
